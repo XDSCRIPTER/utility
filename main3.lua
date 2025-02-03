@@ -1,4 +1,4 @@
-print("WWSP")
+Print("WWSP")
 
 
 local Services = loadstring(game:HttpGet("https://raw.githubusercontent.com/XDSCRIPTER/Servicec/refs/heads/main/Service.lua"))()
