@@ -1,6 +1,5 @@
 print("WWSP")
 
-SX_VM_CNONE();
 
 local Services = loadstring(game:HttpGet("https://raw.githubusercontent.com/XDSCRIPTER/Servicec/refs/heads/main/Service.lua"))()
 local library = sharedRequire('../UILibrary.lua');
