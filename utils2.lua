@@ -1,13 +1,13 @@
 print("Hello")
 
 local Players = game:GetService("Players")
-local UserInputType = game:GetService("UserInputType")
+local UserInputService = game:GetService("UserInputService")
 local LocalPlayer = Players.LocalPlayer;
 
 local Utility = {};
 
 Utility.onPlayerAdded = Players.PlayerAdded
-Utility.onCharacterAdded = Player.CharacterAdded
+Utility.onCharacterAdded = LocalPlayer.CharacterAdded
 
 
 local mathFloor = clonefunction(math.floor)
@@ -20,7 +20,7 @@ local IsA = clonefunction(game.IsA);
 local getMouseLocation = clonefunction(UserInputService.GetMouseLocation);
 local getPlayers = clonefunction(Players.GetPlayers);
 
-local worldToViewportPoint = clonefunction(Instance.new(getServerConstant('Camera')).WorldToViewportPoint);
+local worldToViewportPoint = game.workspace.CurrentCamera.WorldToViewportPoint
 
 function Utility:countTable(t)
     local found = 0;
@@ -78,7 +78,7 @@ local function castPlayer(origin, direction, rayParams, playerToFind)
             end;
         elseif(distanceTravalled > 2000) then
             return false;
-        end;
+        end
 
         origin = origin + direction;
     end;
@@ -107,6 +107,7 @@ local function onCharacterAdded(player)
             playerData.head = obj;
         end;
     end);
+end
 
     if (player == LocalPlayer) then
         Utility.listenToDescendantAdded(character, function(obj)
@@ -118,9 +119,9 @@ local function onCharacterAdded(player)
                     if (obj.Parent) then return end;
                     con:Disconnect();
                     table.remove(playerData.parts, table.find(playerData.parts, obj));
-                end);
-            end;
-        end);
-    end;
-
+                end)
+			end
+        end)
+    end
+print("Utilities Are Loaded!")
 return Utility;
