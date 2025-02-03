@@ -1,4 +1,4 @@
-local Players, UserInputService, HttpService, CollectionService = Services:Get('Players', 'UserInputService', 'HttpService', 'CollectionService');
+local Players, UserInputService, HttpService, CollectionService = game:GetService('Players', 'UserInputService', 'HttpService', 'CollectionService');
 local LocalPlayer = Players.LocalPlayer;
 
 local Utility = {};
