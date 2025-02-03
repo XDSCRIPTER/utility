@@ -1,3 +1,5 @@
+print("Hello")
+
 local Players = game:GetService("Players")
 local UserInputType = game:GetService("UserInputType")
 local LocalPlayer = Players.LocalPlayer;
