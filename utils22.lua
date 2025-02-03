@@ -1,11 +1,12 @@
-local Players, UserInputService, HttpService, CollectionService = game:GetService('Players', 'UserInputService', 'HttpService', 'CollectionService');
+local Players = game:GetService("Players")
+local UserInputType = game:GetService("UserInputType")
 local LocalPlayer = Players.LocalPlayer;
 
 local Utility = {};
 
-Utility.onPlayerAdded = Signal.new();
-Utility.onCharacterAdded = Signal.new();
-Utility.onLocalCharacterAdded = Signal.new();
+Utility.onPlayerAdded = Players.PlayerAdded
+Utility.onCharacterAdded = Player.CharacterAdded
+
 
 local mathFloor = clonefunction(math.floor)
 local isDescendantOf = clonefunction(game.IsDescendantOf);
