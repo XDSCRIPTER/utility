@@ -107,7 +107,7 @@ local function onCharacterAdded(player)
             playerData.head = obj;
         end;
     end);
-end
+
 
     if (player == LocalPlayer) then
         Utility.listenToDescendantAdded(character, function(obj)
@@ -123,5 +123,6 @@ end
 			end
         end)
     end
+	end
 print("Utilities Are Loaded!")
 return Utility;
